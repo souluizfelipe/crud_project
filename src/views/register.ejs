@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body>
+  <h1>register to my crud proj</h1>
+  <% if (register) { %>
+    <div>
+      <p>Cadastro realizado com sucesso</p>
+    </div>
+  <% } %>
+
+  <form action="/register/add" method="POST">
+    <div>
+      <label for="name">Nome</label>
+      <input type="text" name="name" id="name" placeholder="Digite seu nome">
+    </div>
+    <div>
+      <label for="age">Idade</label>
+      <input type="text" name="age" id="age" placeholder="Digite sua idade">
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" placeholder="Digite seu email">
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" placeholder="Digite sua senha">
+    </div>
+    <div>
+      <button type="submit">Cadastrar</button>
+    </div>
+  </form>
+</body>
+</html>
