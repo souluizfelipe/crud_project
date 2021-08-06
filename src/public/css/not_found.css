@@ -8,10 +8,10 @@
   margin: 0 auto;
 }
 
-h1 {
+.not-found-container h1 {
   font-size: 10rem;
 }
 
-p {
+.not-found-container p {
   font-size: 2.5rem;
 }
