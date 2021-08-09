@@ -20,6 +20,17 @@ async function add(req, res) {
 
 };
 
+function register(req, res) {
+    const { r } = req.query;
+    
+    res.render('register', {
+      title: 'Register - CRUD Project',
+      register: r
+    });
+}
+
+
 module.exports = {
   add,
+  register,
 };
