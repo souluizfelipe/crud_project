@@ -10,5 +10,6 @@ router.post('/register/add', CustomersController.add);
 router.get('/list', CustomersController.list);
 router.get('/edit', CustomersController.indexEdit);
 router.post('/edit/:id', CustomersController.edit);
+router.get('/remove/:id', CustomersController.remove);
 
 module.exports = router;

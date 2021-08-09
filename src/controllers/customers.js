@@ -70,10 +70,22 @@ async function edit(req, res) {
   res.redirect('/list');
 }
 
+async function remove(req, res) {
+  const { id } = req.params;
+
+  const removeUser = await CustomersModel.deleteOne({_id: id});
+
+  if (removeUser){
+    res.redirect('/list');
+  }
+
+}
+
 module.exports = {
   add,
   register,
   list,
   indexEdit,
   edit,
+  remove
 };
