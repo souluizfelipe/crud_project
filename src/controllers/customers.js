@@ -39,8 +39,41 @@ async function list(req, res) {
 }
 
 
+async function indexEdit(req, res) {
+  const { id } = req.query;
+  
+  const user = await CustomersModel.findById(id);
+
+  res.render('edit', {
+    title: 'Editar Cadastro',
+    user,
+  })
+}
+
+async function edit(req, res) {
+  const { id } = req.params;
+
+  const {
+    name,
+    age,
+    email,
+  } = req.body
+  
+  const user = await CustomersModel.findById(id);
+
+  user.name = name;
+  user.age = age;
+  user.email = email;
+
+  user.save();
+
+  res.redirect('/list');
+}
+
 module.exports = {
   add,
   register,
   list,
+  indexEdit,
+  edit,
 };
