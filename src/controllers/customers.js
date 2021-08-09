@@ -21,16 +21,26 @@ async function add(req, res) {
 };
 
 function register(req, res) {
-    const { r } = req.query;
-    
-    res.render('register', {
-      title: 'Register - CRUD Project',
-      register: r
-    });
+  const { r } = req.query;
+  
+  res.render('register', {
+    title: 'Register - CRUD Project',
+    register: r
+  });
+}
+
+async function list(req, res) {
+  const users = await CustomersModel.find();
+
+  res.render('list', {
+    title: 'Lista de clientes',
+    users,
+  });
 }
 
 
 module.exports = {
   add,
   register,
+  list,
 };
