@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body>
+  <h1>register to my crud proj</h1>
+  <%- include('partials/navBar.ejs') %>
+
+  <% if (typeof register !== undefined) { %>
+    <div>
+      <p>Cadastro editado com sucesso</p>
+    </div>
+  <% } %>
+
+  <form action="edit/<%= user._id %> " method="POST">
+    <div>
+      <label for="name">Nome: </label>
+      <input type="text" name="name" id="name" placeholder="Digite seu nome" value="<%= user.name %>">
+    </div>
+    <div>
+      <label for="age">Idade: </label>
+      <input type="text" name="age" id="age" placeholder="Digite sua idade" value="<%= user.age %>" >
+    </div>
+    <div>
+      <label for="email">Email: </label>
+      <input type="email" name="email" id="email" placeholder="Digite seu email" value="<%= user.email %> ">
+    </div>
+    <div>
+      <button type="submit">Editar</button>
+    </div>
+  </form>
+</body>
+</html>
